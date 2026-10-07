@@ -207,4 +207,44 @@ section {
   h2 {
     font-size: 24px;
   }
+
+  .project {
+    flex-direction: column;   /* карточка проекта — в столбик */
+  }
+  
+  .project-img {
+    width: 100%;              /* картинка на всю ширину */
+  }
+  
+  .hero-avatar {
+    width: 100px;
+  }
+}
+
+.hero-avatar {
+  width: 150px;              /* 120px или 150px */
+  height: 150px;             /* столько же, чтобы был квадрат */
+  border-radius: 50%;      /* 50% — круглая */
+  margin-bottom: 15px;      /* отступ до заголовка */
+  border: 3px solid #667eea;             /* например, 3px solid #667eea */
+  object-fit: cover;       /* чтобы не искажалась */
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: #1e1e2e;             /* чуть темнее секции, например #1e1e2e */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project h3 {
+  color: #764ba2;                  /* фиолетовый */
+}
+
+.project a {
+  color: #764ba2;                  /* фиолетовый */
+  font-weight: bold;
 }
