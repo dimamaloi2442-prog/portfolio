@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial,sans-serif;          /* подсказка: Arial, sans-serif или system-ui */
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e0e0e0;               /* светлый текст для тёмной темы */
+  background: #1e1e2e;          /* тёмный фон */
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+a {
+  color: #667eea;                /* фиолетовый, например #667eea */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #764ba2;                /* чуть светлее */
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #15151f;        /* тёмный фон, например #15151f */
+  position: sticky;       /* прилипает к верху при скролле */
+  top: 0;
+  z-index: 100;           /* чтобы был поверх остального */
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;             /* белый или фиолетовый */
+}
+
+nav {
+  display: flex;
+  gap: 15px;               /* расстояние между ссылками, например 30px */
+}
+
+nav a {
+  color: #667eea;             /* серый или белый */
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #764ba2;             /* фиолетовый при наведении */
+}
+
+.hero {
+  padding: 80px 20px;              /* много воздуха: 80px 20px или 100px 20px */
+  text-align: center;
+  background: linear-gradient(135deg, #070046, #433d85);         /* градиент или просто тёмный */
+  border-radius: 12px;        /* скругление, если хочешь */
+  margin-bottom: 15px;        /* отступ до следующей секции */
+}
+
+.hero h1 {
+  font-size: 56px;            /* 56px или 64px — крупно */
+  margin-bottom: 12px;        /* отступ до подзаголовка */
+  color: white;                /* белый, если градиент */
+}
+
+.hero p {
+  font-size: 20px;            /* 20px или 22px */
+  margin-bottom: 15px;        /* отступ до кнопки */
+  color: rgba(255,255,255,0.9);                /* белый с прозрачностью: rgba(255,255,255,0.9) */
+}
+
+.hero a {
+  display: inline-block;
+  background: white;           /* белый или контрастный */
+  color: #764ba2;                /* фиолетовый, если фон белый */
+  padding: 14px 32px;              /* 14px 32px */
+  border-radius: 8px;        /* 8px */
+  font-weight: bold;
+  transform: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.hero a:hover {
+  background: #cacaca;
+  transform: translateY(-2px);   /* чуть подпрыгивает */
+}
+
+.about,
+.skills,
+.projects,
+.contacts {
+  background: #2a2a3a;           /* чуть светлее фона body, например #2a2a3a */
+  padding: 30px;              /* 30px или 40px */
+  border-radius: 12px;        /* 12px */
+  margin-bottom: 20px;        /* 20px или 30px */
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #a78bfa;              /* фиолетовый: #667eea или #a78bfa */
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;        /* убирает точки */
+}
+
+.skills li {
+  background: #667eea;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.contacts ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.contacts a {
+  display: inline-block;
+  background: #667eea;         /* #667eea или прозрачный с рамкой */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.contacts a:hover {
+  background: #764ba2;
+  transform: translateY(-2px);
+}
+
+section {
+  scroll-margin-top: 80px;   /* высота шапки + отступ */
+}
+
+@media (max-width: 768px) {
+  /* Шапка */
+  header {
+    padding: 15px 20px;
+  }
+  
+  nav {
+    gap: 12px;
+  }
+  
+  nav a {
+    font-size: 13px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 50px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 32px;
+  }
+  
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* Секции */
+  .about,
+  .skills,
+  .projects,
+  .contacts {
+    padding: 25px 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
