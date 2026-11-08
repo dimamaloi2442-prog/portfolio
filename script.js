@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(typeEffect, 500)
 });
 
-// --- АНИМАЦИЯ ПОЯВЛЕНИЯ (МЕТОД СКРОЛЛА) ---
 document.addEventListener("DOMContentLoaded", () => {
     const reveals = document.querySelectorAll(".reveal");
 
