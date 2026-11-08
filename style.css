@@ -21,7 +21,6 @@ body {
     scroll-behavior: smooth;
 }
 
-/*шапка*/
 header {
     display: flex;
     justify-content: space-between;
@@ -64,7 +63,6 @@ header {
     text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
 }
 
-/* --- КРАСИВЫЙ ПЕРЕКЛЮЧАТЕЛЬ ТЕМ --- */
 .theme-switch {
     position: relative;
     display: inline-block;
@@ -115,7 +113,6 @@ header {
     opacity: 0.8;
 }
 
-/* --- СВЕТЛАЯ ТЕМА --- */
 .theme-switch input:checked + .slider {
     background-color: #87CEEB;
 }
@@ -133,8 +130,6 @@ header {
     top: 6px;
 }
 
-
-/* --- МЕНЮ-БУРГЕР --- */
 .burger {
     display: none;
     flex-direction: column;
@@ -154,7 +149,6 @@ header {
     transition: all 0.3s ease;
 }
 
-/*hero секция*/
 .hero {
     text-align: center;
     padding: 100px 20px;
@@ -212,7 +206,6 @@ header {
     box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
 }
 
-/*Общий контейнер и заголовок*/
 main {
     max-width: 900px;
     margin: 0 auto;
@@ -231,7 +224,6 @@ section h2 {
     position: relative;
 }
 
-/* Анимация при скролле */
 .reveal {
     opacity: 0;
     transform: translateY(50px);
@@ -243,7 +235,6 @@ section h2 {
     transform: translateY(0);
 }
 
-/*Навыки(Красивый бейдж)*/
 .skills ul {
     list-style: none;
     display: flex;
@@ -325,7 +316,6 @@ section h2 {
     color: #f1502f;
 }
 
-/*Проекты(Карточки)*/
 .project-card {
     margin-bottom: 20px;
     background-color: var(--card-bg);
@@ -402,7 +392,6 @@ section h2 {
     opacity: 1;
 }
 
-/*Контакты*/
 .contacts a {
     display: inline-block;
     margin-right: 15px;
@@ -425,7 +414,6 @@ section h2 {
     transform: translateY(-3px);
 }
 
-/* --- ФУТЕР --- */
 footer {
     background-color: var(--card-bg);
     margin-top: 40px;
@@ -496,7 +484,6 @@ footer::before {
     transform: translateY(-3px);
 }
 
-/* --- СВЕТЛАЯ ТЕМА --- */
 body.light {
     --bg-color: #f4f4f9;
     --text-color: #1a1a1a;
@@ -538,7 +525,6 @@ body.light .hero p {
     color: #555;
 }
 
-/*Адаптив под телефон*/
 @media (max-width: 768px) {
     header {
         flex-direction: row;
@@ -625,30 +611,18 @@ body.light .hero p {
     }
 }
 
-
-/* --- ТРАЕКТОРИИ ПОЛЁТА КОДОВ --- */
-
-/* HTML */
 .html-skill:hover .c1 { transform: translate(-80%, -180%) scale(1) rotate(-10deg); }
 .html-skill:hover .c2 { transform: translate(20%, -220%) scale(1) rotate(5deg); }
 .html-skill:hover .c3 { transform: translate(-40%, 120%) scale(1); }
-
-/* CSS */
 .css-skill:hover .c1 { transform: translate(-70%, -160%) scale(1) rotate(8deg); }
 .css-skill:hover .c2 { transform: translate(40%, -190%) scale(1) rotate(-5deg); }
 .css-skill:hover .c3 { transform: translate(-10%, 130%) scale(1); }
-
-/* JS */
 .js-skill:hover .c1 { transform: translate(-90%, -170%) scale(1) rotate(-15deg); }
 .js-skill:hover .c2 { transform: translate(10%, -210%) scale(1); }
 .js-skill:hover .c3 { transform: translate(-50%, 110%) scale(1) rotate(10deg); }
-
-/* JAVA */
 .java-skill:hover .c1 { transform: translate(-85%, -150%) scale(1); }
 .java-skill:hover .c2 { transform: translate(30%, -180%) scale(1) rotate(-8deg); }
 .java-skill:hover .c3 { transform: translate(-20%, 140%) scale(1) rotate(12deg); }
-
-/* GIT */
 .git-skill:hover .c1 { transform: translate(-60%, -190%) scale(1) rotate(-12deg); }
 .git-skill:hover .c2 { transform: translate(50%, -160%) scale(1) rotate(6deg); }
 .git-skill:hover .c3 { transform: translate(0%, 120%) scale(1); }
