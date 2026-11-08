@@ -1,43 +1,73 @@
-let projects = [
-  {
-    title: "Портфолио",
-    description: "Мой личный сайт на HTML, CSS и JS.",
-    link: "https://dimamaloi2442-prog.github.io/portfolio/"
-  },
-  {
-    title: "HorizWorld",
-    description: "Сайт для Minecraft-сервера.",
-    link: "https://dimamaloi2442-prog.github.io/horizworld-layout/"
-  }
-];
+const savedTheme = localStorage.getItem("theme");
+const heroTitle = document.getElementById("hero-title");
+const textToType = "Привет, я Emerald_NS";
+const revealElements = document.querySelectorAll(".reveal");
+const burgerBtn = document.getElementById("burger-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const menuLinks = document.querySelectorAll(".menu a")
+const themeToggle = document.getElementById("theme-toggle");
+let charIndex = 0;
 
-function createProject(project) {
-  let div = document.createElement("div");
-  div.classList.add("project");
-  
-  let h3 = document.createElement("h3");
-  h3.textContent = project.title;
-
-  let p = document.createElement("p");
-  p.textContent = project.description;   // ← вот здесь берёшь описание из объекта
-
-  let link = document.createElement("a");
-  link.textContent = "Посмотреть";
-  link.href = project.link;    // ← свойство href есть у всех <a>
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-
-
-  div.appendChild(h3);
-  div.appendChild(p);
-  div.appendChild(link);
-
-  return div;
+if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light");
+    themeToggle.checked = true; 
 }
 
-let projectsList = document.querySelector(".projects-list");
+themeToggle.addEventListener("change", function() {
+    if (this.checked) {
+        document.body.classList.add("light");
+        localStorage.setItem("theme", "light");
+    } else {
+        document.body.classList.remove("light");
+        localStorage.setItem("theme", "dark");
+    }
+});
 
-projects.forEach(function(project) {
-  let projectElement = createProject(project);
-  projectsList.appendChild(projectElement);
+function typeEffect() {
+    if (charIndex < textToType.length) {
+        heroTitle.textContent += textToType.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 100);
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(typeEffect, 500)
+});
+
+// --- АНИМАЦИЯ ПОЯВЛЕНИЯ (МЕТОД СКРОЛЛА) ---
+document.addEventListener("DOMContentLoaded", () => {
+    const reveals = document.querySelectorAll(".reveal");
+
+    function checkReveal() {
+
+        const windowHeight = window.innerHeight;
+
+        const elementVisible = 100;
+
+        reveals.forEach(reveal => {
+
+            const elementTop = reveal.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveal.classList.add("active");
+            } else {
+
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkReveal);
+    
+    checkReveal();
+});
+
+burgerBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+});
+
+menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+    });
 });
